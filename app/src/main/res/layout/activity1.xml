@@ -44,25 +44,27 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.026" />
     </LinearLayout>
-
-
+    
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="413dp"
         android:layout_height="540dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="413dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,44 +72,44 @@
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,44 +117,248 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="96dp"
-                android:layout_height="92dp"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="145dp"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/imageplaceholder" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="104dp"
+                android:layout_height="106dp"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="145dp"
+                tools:src="@drawable/imageplaceholder" />
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="259dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.957" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/downloading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Downloading "
+                tools:layout_editor_absoluteX="76dp"
+                tools:layout_editor_absoluteY="705dp" />
 
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                tools:layout_editor_absoluteX="76dp"
+                tools:layout_editor_absoluteY="705dp" />
 
+            <TextView
+                android:id="@+id/of"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" of "
+                tools:layout_editor_absoluteX="76dp"
+                tools:layout_editor_absoluteY="705dp" />
 
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 "
+                tools:layout_editor_absoluteX="76dp"
+                tools:layout_editor_absoluteY="705dp" />
 
+            <TextView
+                android:id="@+id/images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="images"
+                tools:layout_editor_absoluteX="76dp"
+                tools:layout_editor_absoluteY="705dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
