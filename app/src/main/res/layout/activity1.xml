@@ -12,13 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/url"
@@ -26,7 +23,10 @@
             android:layout_height="match_parent"
             android:ems="10"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="26dp" />
+            tools:layout_editor_absoluteY="26dp"
+            android:inputType="textPersonName"
+            android:text="https://stocksnap.io/search/coffee"
+            />
 
         <Button
             android:id="@+id/fetch"
@@ -47,359 +47,66 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="409dp"
-        android:layout_height="454dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:orientation="vertical"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <LinearLayout
-            android:layout_width="413dp"
-            android:layout_height="88dp"
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
             android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:choiceMode="multipleChoice"
+            android:gravity="center"
+            android:numColumns="4">
 
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
+        </GridView>
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="413dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="413dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="413dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="413dp"
-            android:layout_height="88dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView17"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView18"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView19"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-
-            <ImageView
-                android:id="@+id/imageView20"
-                android:layout_width="104dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/imageplaceholder"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="145dp" />
-        </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="259dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintHorizontal_bias="0.482"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.957" />
-
-        <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/downloading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Downloading "
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="705dp" />
-
-            <TextView
-                android:id="@+id/number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="705dp" />
-
-            <TextView
-                android:id="@+id/of"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" of "
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="705dp" />
-
-            <TextView
-                android:id="@+id/total"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20 "
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="705dp" />
-
-            <TextView
-                android:id="@+id/images"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="images"
-                tools:layout_editor_absoluteX="76dp"
-                tools:layout_editor_absoluteY="705dp" />
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Downloading ..." />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
