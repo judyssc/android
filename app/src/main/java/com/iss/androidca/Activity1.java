@@ -78,29 +78,18 @@ public class Activity1 extends AppCompatActivity {
                     String htmlText = IOUtils.toString(inStream, connection.getContentEncoding());
                     System.out.println("Binny you are here..");
                     System.out.println(htmlText);
-                    Document document = Jsoup.parse(htmlText);
 
-                    Element div_main = document.getElementById("main");
-                    Elements images = div_main.getElementsByTag("img");
+                    ArrayList<Integer> indexes ;
+                    String s = "<img src=\"";
 
-                    imageurls.clear();
-                    statusPb.setProgress(0);
-                    statusTv.setText("Download ...");
-                    gv.invalidateViews();
-                    gv.setAdapter(new ImageAdapterGridView(getBaseContext()));
-
-
-                    int index = 0;
-                    for (int i=0; i < images.size(); i++) {
-                        Element currentElement = images.get(i);
-                        String src = currentElement.attr("src").toString();
-
-                        if (index < 20) {
-                            imageurls.add(src);
-                        }
-                        index += 1;
+                    indexes=findIndexes(htmlText);
+                    for (Integer i=1; i < 21;i++){
+                        Integer temp = indexes.get(i);
+                        System.out.println(temp);
+                        temp = temp + s.length ();
+                        System.out.println (htmlText.substring (temp, htmlText.indexOf ("\"", temp + 1)));
+                        imageurls.add(htmlText.substring (temp, htmlText.indexOf ("\"", temp + 1)));
                     }
-
                     statusPb.setMax( imageurls.size() );
                     gv.invalidateViews();
 
@@ -215,7 +204,7 @@ public class Activity1 extends AppCompatActivity {
                 mImageView = new ImageView(mContext);
                 mImageView.setLayoutParams(new GridView.LayoutParams(248, 248));
                 mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                mImageView.setPadding(0, 0, 0, 0);
+                mImageView.setPadding(8, 8, 8, 8);
                 new DownloadImageTask(mImageView, position).execute(
                         imageurls.get(position) );
             } else {
@@ -279,5 +268,19 @@ public class Activity1 extends AppCompatActivity {
                 statusTv.setText(message);
             }
         }
+    }
+
+    public static ArrayList<Integer> findIndexes(String str){
+        String searchableString = str;
+        String keyword = "<img src=\"";
+        ArrayList<Integer> indexes = new ArrayList<Integer>();
+
+        int index = searchableString.indexOf(keyword);
+        while (index >=0){
+            indexes.add(index);
+            System.out.println("Index : "+index);
+            index = searchableString.indexOf(keyword, index+keyword.length())   ;
+        }
+        return indexes;
     }
 }
