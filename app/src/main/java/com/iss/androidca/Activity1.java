@@ -23,7 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -34,7 +33,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-
 import org.apache.commons.io.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -51,6 +49,7 @@ public class Activity1 extends AppCompatActivity {
     ArrayList<String> imageurls = new ArrayList<String>();
     ArrayList<Bitmap> imageBtps = new ArrayList<Bitmap>();
     ArrayList<Integer> selectedPos = new ArrayList<Integer>();
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +65,7 @@ public class Activity1 extends AppCompatActivity {
         statusPb = (ProgressBar) findViewById(R.id.progressBar);
         et = (EditText) findViewById(R.id.url);
         gv = (GridView) findViewById(R.id.gridview);
+        intent = new Intent(this, Activity2.class);
 
         Button fetctbtn = (Button) findViewById(R.id.fetch);
         fetctbtn.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +115,7 @@ public class Activity1 extends AppCompatActivity {
             }
         });
 
+
         gv.setAdapter(new ImageAdapterGridView(this));
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             View viewPrev;
@@ -126,15 +127,12 @@ public class Activity1 extends AppCompatActivity {
 
                 if (selectedPos.indexOf(position) == -1) {
                     if (selectedPos.size() < 6) {
-
                         selectedPos.add(position);
                         View viewPrev = (View) gv.getChildAt(position);
                         viewPrev.setBackgroundColor(Color.GRAY );
                         Toast.makeText(getBaseContext(), selectedPos.toString(), Toast.LENGTH_LONG).show();
-
                     } else {
                         Toast.makeText(getBaseContext(), "-  Maximum of 6 items chosen already.", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getBaseContext(), Activity2.class);
 
                         ArrayList<String> ids = new ArrayList<String>();
 
@@ -175,24 +173,20 @@ public class Activity1 extends AppCompatActivity {
                         bundle.putStringArrayList("ids", ids);
                         bundle.putStringArrayList("imageurls", imageurls);
 //                        bundle.putParcelableArrayList("imageBtps", imageBtps);
-
                         intent.putExtras(bundle);
                         startActivity(intent);
-
                     }
 
-                } else {
+                }
+                else {
                     // ignore or do nothing, if user selected the same icon again.
                     selectedPos.remove( selectedPos.indexOf(position) );
                     View viewPrev = (View) gv.getChildAt(position);
                     viewPrev.setBackgroundColor(Color.WHITE);
                     Toast.makeText(getBaseContext(), selectedPos.toString(), Toast.LENGTH_LONG).show();
                 }
-
-
             }
         });
-
     }
 
     public class ImageAdapterGridView extends BaseAdapter {
@@ -219,7 +213,7 @@ public class Activity1 extends AppCompatActivity {
 
             if (convertView == null) {
                 mImageView = new ImageView(mContext);
-                mImageView.setLayoutParams(new GridView.LayoutParams(380, 380));
+                mImageView.setLayoutParams(new GridView.LayoutParams(248, 248));
                 mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 mImageView.setPadding(0, 0, 0, 0);
                 new DownloadImageTask(mImageView, position).execute(
@@ -228,7 +222,6 @@ public class Activity1 extends AppCompatActivity {
                 mImageView = (ImageView) convertView;
             }
             mImageView.setImageResource(mThumbIds[position]);
-//            mImageView.setImageResource(imageIDs[position]);
             return mImageView;
         }
 
