@@ -24,7 +24,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -60,7 +66,6 @@ public class Activity1 extends AppCompatActivity {
         statusPb = (ProgressBar) findViewById(R.id.progressBar);
         et = (EditText) findViewById(R.id.url);
         gv = (GridView) findViewById(R.id.gridview);
-
 
         Button fetctbtn = (Button) findViewById(R.id.fetch);
         fetctbtn.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +141,35 @@ public class Activity1 extends AppCompatActivity {
                         for (int i=0; i < selectedPos.size(); i++) {
                             ids.add( selectedPos.get(i).toString() );
                         }
+                        for(int i =0;i<ids.size();i++) {
+                            long imageLen = 0;
+                            long totalSoFar = 0;
+                            int readLen = 0;
+                            Bitmap bitmap = null;
+                            String id1 = ids.get(i);
+                            int first = Integer.parseInt(id1);
+                            String url = imageurls.get(first);
+                            String fpath = getFilesDir() + "/" + i + ".jpg";
+                            try {
+                                URL url1 = new URL(url);
+
+                                byte[] data = new byte[1024];
+                                HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
+                                conn.connect();
+                                imageLen = conn.getContentLength();
+                                InputStream in = url1.openStream();
+                                BufferedInputStream bufIn = new BufferedInputStream(in, 2048);
+                                OutputStream out = new FileOutputStream(fpath);
+                                while ((readLen = bufIn.read(data)) != -1) {
+                                    totalSoFar += readLen;
+                                    out.write(data, 0, readLen);
+                                }
+                            } catch (MalformedURLException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
 
                         Bundle bundle = new Bundle();
                         bundle.putStringArrayList("ids", ids);
@@ -193,9 +227,20 @@ public class Activity1 extends AppCompatActivity {
             } else {
                 mImageView = (ImageView) convertView;
             }
+            mImageView.setImageResource(mThumbIds[position]);
 //            mImageView.setImageResource(imageIDs[position]);
             return mImageView;
         }
+
+        public Integer[] mThumbIds = {
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder, R.drawable.imageplaceholder,
+                R.drawable.imageplaceholder, R.drawable.imageplaceholder
+        };
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
