@@ -219,7 +219,7 @@ public class Activity1 extends AppCompatActivity {
 
             if (convertView == null) {
                 mImageView = new ImageView(mContext);
-                mImageView.setLayoutParams(new GridView.LayoutParams(248, 248));
+                mImageView.setLayoutParams(new GridView.LayoutParams(380, 380));
                 mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 mImageView.setPadding(0, 0, 0, 0);
                 new DownloadImageTask(mImageView, position).execute(
