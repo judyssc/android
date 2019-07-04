@@ -76,8 +76,14 @@ public class Activity1 extends AppCompatActivity {
                     URLConnection connection = new URL( url ).openConnection();
                     InputStream inStream = connection.getInputStream();
                     String htmlText = IOUtils.toString(inStream, connection.getContentEncoding());
-                    System.out.println("Binny you are here..");
-                    System.out.println(htmlText);
+                    //System.out.println("Binny you are here..");
+                    //System.out.println(htmlText);
+
+                    imageurls.clear();
+                    statusPb.setProgress(0);
+                    statusTv.setText("Download ...");
+                    gv.invalidateViews();
+                    gv.setAdapter(new ImageAdapterGridView(getBaseContext()));
 
                     ArrayList<Integer> indexes ;
                     String s = "<img src=\"";
