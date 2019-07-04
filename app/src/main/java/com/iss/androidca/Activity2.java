@@ -1,9 +1,12 @@
 package com.iss.androidca;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +15,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,6 +38,7 @@ public class Activity2 extends AppCompatActivity {
     int prenum;
     int match=0;
     Chronometer simpleChronometer;
+    Intent in;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,8 @@ public class Activity2 extends AppCompatActivity {
 
         list = Arrays.asList(0,1,2,3,4,5,0,1,2,3,4,5);
         Collections.shuffle(list);//randomly
+
+        in = new Intent(this,Activity1.class);
 
         for(int i=0;i<12;i++)
         {
@@ -61,7 +68,6 @@ public class Activity2 extends AppCompatActivity {
         gridview.setAdapter(saImageItems);
         gridview.setOnItemClickListener(new ItemClickListener());
 
-        //for time
         simpleChronometer = (Chronometer) findViewById(R.id.simpleChronometer);
         simpleChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener(){
             @Override
@@ -81,6 +87,8 @@ public class Activity2 extends AppCompatActivity {
         simpleChronometer.start();
     }
 
+    Handler handler = new Handler();
+
     public class  ItemClickListener implements AdapterView.OnItemClickListener
     {
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -96,12 +104,17 @@ public class Activity2 extends AppCompatActivity {
                 pre = item.get("ItemText").toString();
             }
             else if(pre == item.get("ItemText").toString() && prenum != arg2){
-
                 displayImage(path);
                 count = 1;
                 match++;
                 if(match == 6){
                     simpleChronometer.stop();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(in);
+                        }
+                    },500);
                 }
                 TextView x = (TextView)findViewById(R.id.match);
                 x.setText("Match :"+ String.valueOf(match)+"/ 6");
@@ -111,7 +124,14 @@ public class Activity2 extends AppCompatActivity {
                 count = 2;
             }
             else {
-                displayBlank(view2);
+                displayImage(path);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        displayBlank(imageView);
+                        displayBlank(view2);
+                    }
+                },1500);
                 count = 1;
             }
         }
@@ -137,6 +157,3 @@ public class Activity2 extends AppCompatActivity {
         }
     }
 }
-
-
-
